@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "425148890130",
+    "firebase_url": "https://tu-calendar-prod.firebaseio.com",
+    "project_id": "tu-calendar-prod",
+    "storage_bucket": "tu-calendar-prod.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:425148890130:android:c647afae920fe28fb46ccb",
+        "android_client_info": {
+          "package_name": "com.zigmanice.tu.calendars"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "425148890130-nabuau6rmrvtiulfp18h63ngfu6plm5u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw1RlmDsok8KlPozfHycTs-ZtjvKjD0XY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "425148890130-nabuau6rmrvtiulfp18h63ngfu6plm5u.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "425148890130-71omkt134a055t5p1sqm2vlue7vuogj1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.zigmanice.tu.calendars"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:425148890130:android:dd8ef1eba0a8386db46ccb",
+        "android_client_info": {
+          "package_name": "com.zigmanice.tucalendar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "425148890130-nabuau6rmrvtiulfp18h63ngfu6plm5u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw1RlmDsok8KlPozfHycTs-ZtjvKjD0XY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "425148890130-nabuau6rmrvtiulfp18h63ngfu6plm5u.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "425148890130-71omkt134a055t5p1sqm2vlue7vuogj1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.zigmanice.tu.calendars"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
