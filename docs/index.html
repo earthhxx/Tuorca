@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ติดตั้งแอป TUORCA (iOS Enterprise)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --background: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text: #f8fafc;
+            --text-secondary: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Decorative background elements */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            top: -50px;
+            left: -50px;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, #06b6d4 0%, transparent 70%);
+            bottom: -100px;
+            right: -100px;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        .logo-container {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--primary) 0%, #06b6d4 100%);
+            border-radius: 22px;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 600;
+            color: white;
+            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .info-card {
+            background: rgba(15, 23, 42, 0.4);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 14px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            text-align: left;
+        }
+
+        .info-item span:first-child {
+            display: block;
+            color: var(--text-secondary);
+            font-size: 12px;
+            margin-bottom: 2px;
+        }
+
+        .info-item span:last-child {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .btn-install {
+            display: inline-block;
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(90deg, var(--primary) 0%, #4338ca 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 16px rgba(79, 70, 229, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .btn-install:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px rgba(79, 70, 229, 0.35);
+        }
+
+        .btn-install:active {
+            transform: translateY(0);
+        }
+
+        .instructions {
+            text-align: left;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .instructions h3 {
+            font-size: 14px;
+            margin-bottom: 12px;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .instructions ol {
+            padding-left: 20px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+        }
+
+        .instructions li strong {
+            color: var(--text);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">T</div>
+        <h1>TUORCA</h1>
+        <p class="subtitle">ระบบติดตั้งแอปภายใน (iOS Enterprise)</p>
+        
+        <div class="info-card">
+            <div class="info-item">
+                <span>เวอร์ชันแอป</span>
+                <span>2.0.1 (Build 1)</span>
+            </div>
+            <div class="info-item">
+                <span>Bundle ID</span>
+                <span>com.tuorca.calendar</span>
+            </div>
+        </div>
+
+        <a href="itms-services://?action=download-manifest&url=https://earthhxx.github.io/Tuorca/manifest.plist" class="btn-install">
+            📥 แตะเพื่อติดตั้งแอป (Install App)
+        </a>
+
+        <div class="instructions">
+            <h3>⚙️ ขั้นตอนการติดตั้งและการเปิดใช้งาน</h3>
+            <ol>
+                <li>แตะปุ่ม <strong>แตะเพื่อติดตั้งแอป</strong> ด้านบน แล้วกดยืนยันการติดตั้ง</li>
+                <li>เมื่อติดตั้งเสร็จแล้ว ก่อนเริ่มใช้งานแอปเป็นครั้งแรก ให้ไปที่:
+                    <br><strong>การตั้งค่า (Settings) > ทั่วไป (General) > การจัดการ VPN และอุปกรณ์ (VPN & Device Management)</strong>
+                </li>
+                <li>ภายใต้หัวข้อองค์กร เลือก <strong>Department of Orthopaedics...</strong></li>
+                <li>แตะปุ่ม <strong>เชื่อถือ (Trust)</strong> เพื่อเริ่มใช้งานแอปพลิเคชัน</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

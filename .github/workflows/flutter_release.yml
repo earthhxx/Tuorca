@@ -97,8 +97,31 @@ jobs:
           echo "download_url=$DOWNLOAD_URL" >> "$GITHUB_OUTPUT"
           echo "IPA Download URL: $DOWNLOAD_URL" >> "$GITHUB_STEP_SUMMARY"
 
+      - name: Deploy to GitHub Pages Folder
+        run: |
+          mkdir -p docs
+          IPA_PATH="${{ steps.locate-ipa.outputs.ipa_path }}"
+          cp "$IPA_PATH" docs/tuoc.ipa
+          
+          # Setup git
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Add, commit and push changes
+          git add docs/tuoc.ipa
+          git add docs/manifest.plist docs/index.html || true
+          
+          if ! git diff --cached --quiet; then
+            git commit -m "ci: deploy automated signed ipa build ${{ github.run_id }} to github pages docs"
+            git push origin main
+          else
+            echo "No changes to commit"
+          fi
+
       - name: Notify with URL
         env:
           DOWNLOAD_URL: ${{ steps.publish-release.outputs.download_url }}
         run: |
           echo "The iOS IPA is available at: $DOWNLOAD_URL"
+          echo "GitHub Pages Installation URL: https://earthhxx.github.io/Tuorca/"
+
