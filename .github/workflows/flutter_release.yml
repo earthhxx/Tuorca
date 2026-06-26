@@ -61,7 +61,10 @@ jobs:
           cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles/$UUID.mobileprovision
 
       - name: Build signed IPA
-        run: flutter build ipa --export-options-plist=ios/ExportOptions.plist
+        run: |
+          flutter build ipa --release --export-options-plist=ios/ExportOptions.plist \
+          --build-name=2.0.1 \
+          --build-number=1
 
       - name: Locate IPA path
         id: locate-ipa
